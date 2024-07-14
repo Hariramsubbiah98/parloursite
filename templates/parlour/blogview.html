@@ -1,0 +1,82 @@
+{% extends 'parlour/main.html' %}
+{% load static %}
+
+{% block title %}
+    Nova Beauty | Blogs
+{% endblock title %}
+
+{% block content %}
+	<div class="container">
+	<section class="bg-light py-4 my-5">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container pb50">
+    <div class="row">
+        <div class="col-md-9 mb40">
+            <article>
+                <img src="{{blogvi.image.url}}" alt="{{blog.author}}" class="img-fluid mb30">
+                <div class="post-content">
+                    <h3>{{blogvi.title}}</h3>
+                    <ul class="post-meta list-inline">
+                        <li class="list-inline-item">
+                        <img src="{% static 'images/default-user.jpg' %}" alt="Author Image" class="img-fluid rounded-circle" width="30" height="30"><a href="#">{{blogvi.author}}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <i class="fa fa-calendar-o"></i> <a href="#">{{blogvi.created_at|date:"d M Y"}}</a>
+                        </li>
+                    </ul>
+                    <p class="lead">{{blogvi.text}}</p>
+					<h5>{{blogvi.description_title1}}</h5>
+                    <p class="lead">{{blogvi.description1}}</p>
+					<h5>{{blogvi.description_title2}}</h5>
+                    <p class="lead">{{blogvi.description2}}</p>
+                    <ul class="list-inline share-buttons">
+                        <li class="list-inline-item">Share Post:</li>
+                       <li class="list-inline-item">
+							<a href="https://www.instagram.com/accounts/login/?hl=en" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+								<img src="{% static 'images/instagram.png' %}" alt="Instagaram" class="img-fluid" width="15" height="10">
+							</a>
+						</li>
+                         <li class="list-inline-item">
+							<a href="https://www.facebook.com/" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+								<img src="{% static 'images/facebooks.jpg' %}" alt="Facebook" class="img-fluid" width="15" height="10">
+							</a>
+						</li>
+                         <li class="list-inline-item">
+							<a href="https://www.twitter.com/" class="social-icon-sm si-dark si-colored-facebook si-gray-round">
+								<img src="{% static 'images/twitter.png' %}" alt="Twitter" class="img-fluid" width="15" height="10">
+							</a>
+						</li>
+                    </ul>
+                    <hr class="mb40">
+                    <h4 class="mb40 text-uppercase font500">Written By:</h4>
+                    <div class="media mb40">
+                        <div class="media-body">
+                            <h5 class="mt-0 font700">{{blogvi.author}}</h5> {{blogvi.About_Author}}
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- post article-->
+
+        </div>
+        <div class="col-md-3 mb40">
+            <div>
+                <h4 class="sidebar-title">Popular Blogs:</h4>
+                <ul class="list-unstyled">
+				{% for other in other_blogs %}
+                    <li class="media">
+                        <img class="d-flex mr-3 img-fluid" width="64" src="{{other.image.url}}" alt="Generic placeholder image">
+                        <div class="media-body">
+                            <h5 class="mt-0 mb-1"><a href="{% url 'blogview' other.slug %}">{{other.title}}</a></h5> {{other.created_at|date:"d M Y"}}
+                        </div>
+                    </li>
+				{% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+	</section>
+	</div>
+
+{% endblock content %}

@@ -1,0 +1,116 @@
+{% extends 'parlour/main.html' %}
+{% load static %}
+
+{% block title %}
+    Nova Beauty | About Us
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <section class="bg-light py-4 my-5" style="background-image: url('{% static 'images/aboutus.jpg' %}'); width: 100%; height: 300px; background-size: cover; background-position: center;">
+        <div class="text-center container mt-5">
+            <h2 class="eltd-section-title" style="font-size: 60px; color: white; line-height: 100px;">
+                About Us
+            </h2>
+        </div>
+    </section>
+
+    <section class="bg-light py-4 my-5">
+        <div class="container">
+            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded" loading="lazy" src="{% static 'images/history.jpg'%}" alt="About 1">
+                </div>
+                <div class="col-12 col-lg-6 col-xl-7 d-flex flex-column justify-content-center">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <h2 class="mb-3">Who Are We?</h2>
+                            <p class="lead fs-4 text-secondary mb-3">Each year, We crafts a set of looks that are aligned with the current trends and in tune with the preferences of the Indian audience.</p>
+                            <p class="mb-5">We are a fast-growing company, but we have never lost sight of our core values. We believe in collaboration, innovation, and customer satisfaction. We are always looking for new ways to improve our services.</p>
+                            <div class="row gy-4 gy-md-0 gx-xxl-5">
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                                <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h2 class="h4 mb-3">Versatile Brand</h2>
+                                            <p class="text-secondary mb-0">We are crafting a digital method that subsists life across all mediums.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-fire" viewBox="0 0 16 16">
+                                                <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h2 class="h4 mb-3">Digital Agency</h2>
+                                            <p class="text-secondary mb-0">We believe in innovation by merging primary with elaborate ideas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-4 my-5">
+        <div class="container">
+            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+                <div class="col-12 col-lg-6 col-xl-7 d-flex flex-column justify-content-center">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <h2 class="mb-3">Our Mission</h2>
+                            <p class="lead fs-4 text-secondary mb-3">We are dedicated to providing high-quality services that align with the latest trends and cater to the unique needs of our customers.</p>
+                            <p class="mb-5">Our mission is to innovate and excel in the beauty industry by offering unparalleled customer service and creative solutions.</p>
+                            <div class="row gy-4 gy-md-0 gx-xxl-5">
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+                                                <path d="M7.688 0.5l-.406 1.51L5.552 2.258l1.23.893L7.7 4.64l.658-.489L9.57 2.6 8.338 1.707l-.37-1.207-.283-.5-.344.5-.563.293zM5.5 7.688l-1.518-.406L3.258 5.552 2.365 6.782 1 7.7l.49.658L2.4 9.57l.893-1.232.513.395.395-.513 1.233-.893L5.5 7.688zM10.738 11l-1.518.406-.406 1.518-1.21-.78L7.1 12.7 7.7 11.7 6.75 11.2 7.2 9.5 8.3 10.3 9 9.3l.5.5-1.7.5L10 10.7 11.2 11.2l.5 1.4 1.2-.5-.7-1.2-.2-.7.5-.5.3.2 1.2.7-.5-1.2.5-.5-.3-.2-1.2-.7.5 1.2-.5.5-.2-.3L10.5 10l-.3.3.5.7 1.7-.5.5-.5-.7 1.2 1.2-.5-.7-1.2z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h2 class="h4 mb-3">Quality Service</h2>
+                                            <p class="text-secondary mb-0">We strive to provide the best quality services to our clients.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="d-flex">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                                                <path d="M2 6a6 6 0 1 1 12 0 6 6 0 0 1-12 0z"/>
+                                                <path d="M9 10.5a2.5 2.5 0 0 1-5 0 .5.5 0 0 0-1 0 3.5 3.5 0 0 0 7 0 .5.5 0 0 0-1 0z"/>
+                                                <path d="M6.4 12.4a.5.5 0 0 0 .1.6h.1a.5.5 0 0 0 .3-.1l1-.7a.5.5 0 1 0-.5-.8l-1 .7a.5.5 0 0 0-.1.3z"/>
+                                                <path d="M7.4 10.6a.5.5 0 0 0-.8.4.5.5 0 0 0 .8-.4z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h2 class="h4 mb-3">Innovative Solutions</h2>
+                                            <p class="text-secondary mb-0">We embrace innovation to stay ahead in the industry.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <img class="img-fluid rounded" style="height: 400px; object-fit: cover;" loading="lazy" src="{% static 'images/abouts.jpg'%}" alt="Our Mission">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

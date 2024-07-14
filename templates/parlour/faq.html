@@ -1,0 +1,52 @@
+{% extends 'parlour/main.html' %}
+{% load static %}
+
+{% block title %}
+    Nova Beauty | FAQ's
+{% endblock title %}
+
+{% block content %}
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="container">
+    <section class="bg-light py-4 my-5">
+        <div class="row">
+            {% for faq in faqs %}
+            <div class="col-12 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="container-fluid py-2">
+                            <h5 class="mb-0">{{ faq.title }}</h5>
+                        </div>
+                        <div id="accordion-{{ forloop.counter }}" class="accordion">
+                            <div class="card">
+                                <div class="card-header" id="heading-{{ forloop.counter }}">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse-{{ forloop.counter }}">
+                                            {{ faq.question }}
+                                        </button>
+                                    </h5>
+                                </div>
+                                <div id="collapse-{{ forloop.counter }}" class="collapse" aria-labelledby="heading-{{ forloop.counter }}" data-parent="#accordion-{{ forloop.counter }}">
+                                    <div class="card-body">
+                                        <p>{{ faq.answers }}</p>
+                                        <div class="mt-2">
+                                            <span class="text-black">- {{ faq.author }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+{% endblock content %}

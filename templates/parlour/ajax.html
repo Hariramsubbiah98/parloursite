@@ -1,0 +1,70 @@
+{% load static %} 
+
+{% for review in reviews %}
+<article class="u-container-style u-list-item mx-4 mb-4" style="width: calc(30% - 40px);">
+    <div class="u-container-layout review-box">
+        {% if review.image %}
+        <div class="u-image u-image-circle" style="background-image: url('{{ review.image.url }}');" aria-label="Client photo"></div>
+        {% else %}
+        <div class="u-image u-image-circle" style="background-image: url('{% static 'images/default-user.jpg' %}');" aria-label="Default user photo"></div>
+        {% endif %}
+		<h6>{{ review.title }}</h6>
+        <p class="u-text">{{ review.text }}</p>
+        <div class="u-rating">
+            {% if review.rating >= 1 %}
+                {% if review.rating >= 4.5 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                {% elif review.rating >= 4 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% elif review.rating >= 3.5 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% elif review.rating >= 3 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% elif review.rating >= 2.5 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% elif review.rating >= 2 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% elif review.rating >= 1.5 %}
+                    <i class="fa fa-star golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o golden" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% else %}
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                {% endif %}
+            {% endif %}
+        </div>
+
+        <h6 class="u-text u-text-palette-2-base">- {{ review.author }}</h6>
+    </div>
+</article>
+{% endfor %}

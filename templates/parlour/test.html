@@ -1,0 +1,138 @@
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+
+.wrapper {
+  position: absolute;
+  width: 80vw;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: space-around;
+  gap: 100px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+#num-section {
+	width: 35vmin;
+	height: 28vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content:center; ;
+	padding: 1em 0;
+	margin-bottom:40px;
+	position: relative;
+	font-size: 16px;
+	border-radius: 0.5em;
+	background-color: #3374FF;
+	border-bottom: 10px solid #18f98f; 
+}
+span.text {
+  color: black;
+  font-size: 1em;
+  text-align: center;
+  pad: 0.7em 0;
+  font-weight: 400;
+  line-height: 0;
+}
+span.num {
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 3em;
+}
+#runner-1 {
+  color: #18f98f;
+  font-size: 2.5em;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    width: 85vw;
+  }
+  .container {
+    height: 26vmin;
+    width: 26vmin;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 90vw;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .container {
+    width: calc(50% - 40px);
+    height: 30vmin;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    gap: 15px;
+  }
+  .container {
+    width: 100%;
+    height: 25vmin;
+    font-size: 8px;
+  }
+}
+ </style>
+</head>
+<body>
+  
+    <div class="wrapper">
+      <div class="container" id="num-section">
+        <i class="fas fa-spa" id="runner-1" ></i>
+        <span class="num" data-val="400">000</span>
+        <span class="text">Members Visited</span>
+      </div>
+
+      <div class="container" id="num-section">
+        <i class="fas fa-smile-beam" id="runner-1"></i>
+        <span class="num" data-val="340">000</span>
+        <span class="text">Happy Customers</span>
+      </div>
+
+      <div class="container" id="num-section">
+        <i class="fas fa-list" id="runner-1"></i>
+        <span class="num" data-val="225">000</span>
+        <span class="text">Services</span>
+      </div>
+
+      <div class="container" id="num-section">
+        <i class="fas fa-star" id="runner-1"></i>
+        <span class="num" data-val="280">000</span>
+        <span class="text">Five Stars</span>
+      </div>
+    </div>
+  <script>
+  let valueDisplays = document.querySelectorAll(".num");
+let interval = 4000;
+
+valueDisplays.forEach((valueDisplay) => {
+  let startValue = 0;
+  let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+  let duration = Math.floor(interval / endValue);
+  let counter = setInterval(function () {
+    startValue += 1;
+    valueDisplay.textContent = startValue;
+    if (startValue == endValue) {
+      clearInterval(counter);
+    }
+  }, duration);
+});
+  </script>
+</body>	
+

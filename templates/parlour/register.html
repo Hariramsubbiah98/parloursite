@@ -1,0 +1,87 @@
+{% extends 'parlour/main.html' %}
+{% load static %}
+
+{% block title %}
+    Nova Beauty | Contact Us
+{% endblock title %}
+
+{% block content %}
+<style>
+    .container-padding {
+        padding-top: 30px; 
+    }
+</style>
+<div class="contact2" style="background-image:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/map.jpg)" id="contact">
+  <div class="container-xl container-padding">
+    <div class="row contact-container">
+      <div class="col-lg-12">
+        <div class="card card-shadow border-0 mb-4">
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="contact-box p-4">
+                <h4 class="title">Contact Us</h4>
+					<form method="post" action="">
+						{% csrf_token %}
+						<div class="form-group">
+							{{ form.name }}
+							{% if form.name.errors %}
+								<div class="text-danger">
+									{{ form.name.errors }}
+								</div>
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.email }}
+							{% if form.email.errors %}
+								<div class="text-danger">
+									{{ form.email.errors }}
+								</div>
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.phone_number }}
+							{% if form.phone_number.errors %}
+								<div class="text-danger">
+									{{ form.phone_number.errors }}
+								</div>
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.service }}
+							{% if form.service.errors %}
+								<div class="text-danger">
+									{{ form.service.errors }}
+								</div>
+							{% endif %}
+						</div>
+						<div class="form-group">
+							{{ form.message }}
+							{% if form.message.errors %}
+								<div class="text-danger">
+									{{ form.message.errors }}
+								</div>
+							{% endif %}
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				 </div>
+				</div>
+				<div class="col-lg-4 bg-image" style="background-image:url(https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/contact/1.jpg)">
+				  <div class="detail-box p-4" >
+					<h5 class="text-white font-weight-light mb-3">ADDRESS</h5>
+					<p class="text-white op-7">No18/31 2nd floor,Ganapathy Nagar,
+					  <br>Chennai</p>
+					<h5 class="text-white font-weight-light mb-3 mt-4">CALL US</h5>
+					<p class="text-white op-7">91 7358449758
+					  <br></p>
+					<h5 class="text-white font-weight-light mb-3">Email</h5>
+					<p class="text-white op-7">support@novabeauty.com</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+{% endblock content %}

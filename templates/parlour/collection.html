@@ -1,0 +1,57 @@
+{% extends 'parlour/main.html' %}
+{% load static %}
+
+{% block title %}
+    Nova Beauty | Service Details
+{% endblock title %}
+
+{% block content %}
+<style>
+    .zoom-effect {
+        transition: transform 0.3s ease;
+    }
+
+    .zoom-effect:hover {
+        transform: scale(1.05);
+    }
+</style>
+ <section class="text-center container mt-5">
+    <div class="col-lg-9 col-md-6 mx-auto">
+        <h1 class="fw-light">{{ category.name }}</h1>
+        <p class="lead text-muted">
+            {{ category.description }}
+        </p>
+    </div>
+	</section>
+	<section class="bg-light py-4 my-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <ul class="list-group">
+                    {% for item in products %}
+                        <li class="list-group-item product-card mb-3">
+                            <div class="row zoom-effect">
+                                <div class="col-md-3 col-sm-12">
+                                    <img src="{{ item.image.url|default_if_none:'/static/images/default-product.jpg' }}" 
+                                         alt="{{ item.name }}" 
+                                         class="img-fluid img-fit" 
+                                         style="max-width: 200px; height: 200px;">
+                                </div>
+                                <div class="col-md-9 col-sm-12">
+                                    <h3>{{ item.name }}</h3>
+                                    <p>{{ item.short_description }}</p>
+									<button type="button" class="btn btn-outline-info">
+										<a href="{% url 'product_details' category item.name %}">View Details</a>
+									</button>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+

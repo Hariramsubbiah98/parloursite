@@ -1,0 +1,108 @@
+{% extends 'parlour/main.html' %}
+
+{% block title %}
+    Nova Beauty | Our Services
+{% endblock title %}
+
+{% block content %}
+    <style>
+        .hovereffect {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hovereffect img {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hovereffect .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hovereffect h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            transition: transform 0.2s ease-in-out;
+            transform: translateY(-20px);
+        }
+
+        .hovereffect a.info {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .hovereffect:hover .overlay {
+            opacity: 1;
+        }
+
+        .hovereffect:hover h2,
+        .hovereffect:hover a.info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+
+    <section class="text-center container mt-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mx-auto">
+                <h1 class="fw-light">Our Services</h1>
+                <p class="lead text-muted">
+                    Our mission is to provide you with a holistic beauty experience that rejuvenates your mind, body, and spirit. We offer a wide array of services designed to enhance your natural beauty and promote a sense of well-being.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-light py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="mb-3">What We Offer</h4>
+                    <hr class="border-secondary">
+                </div>
+                {% for item in catagory %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="hovereffect">
+                            {% if item.image.url %}
+                                <img class="img-responsive" src="{{ item.image.url }}" alt="Service - {{ item.name }}">
+                            {% endif %}
+                            <div class="overlay">
+                                <h2>{{ item.name }}</h2>
+                                <a class="info" href="{% url 'servicesview' item.name %}">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="text-muted">No services available at the moment. Please check back later.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}
